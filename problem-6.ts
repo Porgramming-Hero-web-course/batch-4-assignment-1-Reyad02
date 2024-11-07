@@ -9,12 +9,19 @@
 
     type ProfilePartial = Partial<Profile>
 
-    function updateProfile(profile: Profile, obj: ProfilePartial) {
-        
+    function updateProfile(profile: Profile, obj: ProfilePartial): Profile {
+
+        const objKeys = Object.keys(obj);
+
+        objKeys.forEach(item => {
+            profile[item] = obj[item]
+        })
+
+        return profile
     }
 
     // Sample Input :
     const myProfile = { name: "Alice", age: 25, email: "alice@example.com" };
-    console.log(updateProfile(myProfile, { age: 26, name: "Rahim" }));
+    console.log(updateProfile(myProfile, { age: 26 }));
 
 }

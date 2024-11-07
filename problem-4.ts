@@ -14,12 +14,12 @@
 
     type Shape = Circle | Rectangle
 
-    function calculateShapeArea(something: Shape): number{
-        if(something.shape==="circle"){
-            return (Math.PI * Math.pow(something.radius,2));
+    function calculateShapeArea(s: Shape): number{
+        if(s.shape==="circle"){
+            return (Math.PI * Math.pow(s.radius,2));
         }
         else{
-            return something.width * something.height;
+            return s.width * s.height;
         }
     }
 

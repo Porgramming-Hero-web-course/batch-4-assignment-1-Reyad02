@@ -13,3 +13,35 @@ function login(studentID: string | number, password: string) {
     // If studentID and password are valid, the student can log in...
 }
 ```
+
+here studentID can be a string or number.
+
+#### Intersection Types (&)
+
+Intersection denoted by "&" symbol. This is used when you need both of the types. 
+
+
+Example:
+
+```typescript
+type Student = {
+    name: string;
+    studentID: string;
+}
+
+type Section = {
+    sec: string;
+    time: string;
+}
+
+type SectionAssignedStudent = Student & Section;
+
+const student: SectionAssignedStudent = {
+    name: "John Doe",
+    studentID: "12345",
+    sec: "A1",
+    time: "10:00 AM - 1:00 PM"
+};
+```
+
+Here, using intersection to create a new type named SectionAssignedStudent. When you use the SectionAssignedStudent type you must have set all the properties of both Student and Section type.
